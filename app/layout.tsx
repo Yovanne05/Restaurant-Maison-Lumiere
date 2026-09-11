@@ -55,11 +55,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="fr" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="grain min-h-dvh bg-ink antialiased">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: 'document.documentElement.setAttribute("data-motion","on")',
-          }}
-        />
         <a
           href="#contenu"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[70] focus:rounded-full focus:bg-gold focus:px-5 focus:py-3 focus:text-sm focus:font-medium focus:text-ink"

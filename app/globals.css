@@ -98,22 +98,25 @@
    Apparition au défilement, pilotée par IntersectionObserver.
    -------------------------------------------------------------------------- */
 /*
-   L'état masqué est conditionné à data-motion, posé par un script inline dès le
-   début du document. Sans JavaScript, l'attribut n'arrive jamais et le contenu
-   reste visible : aucune section ne peut disparaître faute d'IntersectionObserver.
+   L'état masqué n'existe que si les scripts tournent : sans JavaScript, aucune
+   section ne peut rester invisible faute d'IntersectionObserver. La règle vit
+   dans la feuille de style plutôt que dans un script, pour ne rien changer au
+   HTML rendu par le serveur.
 */
-[data-motion="on"] [data-reveal] {
-  opacity: 0;
-  transform: translate3d(0, 28px, 0);
-  transition:
-    opacity 0.9s var(--ease-out-soft),
-    transform 0.9s var(--ease-out-soft);
-  transition-delay: var(--reveal-delay, 0ms);
-}
+@media (scripting: enabled) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity 0.9s var(--ease-out-soft),
+      transform 0.9s var(--ease-out-soft);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
 
-[data-motion="on"] [data-reveal="in"] {
-  opacity: 1;
-  transform: none;
+  [data-reveal="in"] {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -179,10 +182,10 @@
     scroll-behavior: auto;
   }
 
-  [data-motion="on"] [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   .marquee-track,

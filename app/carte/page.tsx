@@ -35,7 +35,7 @@ export default async function CartePage() {
         }
         intro="Elle est courte parce qu'elle change. Ce qui manque un jour revient le suivant, et ce qui ne revient pas n'était pas assez bon."
         image={{
-          src: "/media/venue/table-service.jpg",
+          src: "/media/venue/table-service.webp",
           alt: "Assiette dressée posée sur une table du restaurant",
         }}
       >

@@ -41,7 +41,7 @@ export function Manifesto({ values }: { values: readonly Value[] }) {
           <Reveal delay={140} className="flex flex-col gap-8">
             <div className="relative aspect-4/5 overflow-hidden rounded-5xl">
               <Image
-                src="/media/venue/marche.jpg"
+                src="/media/venue/marche.webp"
                 alt="Étal de légumes frais préparés pour le service"
                 fill
                 sizes="(min-width: 1024px) 42vw, 90vw"

@@ -1,23 +1,24 @@
 import Image from "next/image";
-import type { Identity } from "@/services/content-service/contract";
+import type { Identity, OpeningDay } from "@/services/content-service/contract";
 import type { ReviewSummary } from "@/services/review-service";
 import { ArrowIcon, ButtonLink } from "@/packages/ui/button";
 import { Container, Stars } from "@/packages/ui/primitives";
+import { TodayLabel } from "@/components/shared/opening-hours";
 
 export function Hero({
   identity,
   summary,
-  todayLabel,
+  hours,
 }: {
   identity: Identity;
   summary: ReviewSummary;
-  todayLabel: string;
+  hours: readonly OpeningDay[];
 }) {
   return (
     <section className="relative min-h-[100svh] overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/media/venue/salle.jpg"
+          src="/media/venue/salle.webp"
           alt="Salle de Maison Lumière avec ses tables en bois clair et ses banquettes sombres"
           fill
           priority
@@ -59,7 +60,9 @@ export function Hero({
         <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-cream/12 pt-8 sm:mt-20 lg:grid-cols-4">
           <div>
             <dt className="text-[11px] tracking-[0.22em] text-mist uppercase">Aujourd&apos;hui</dt>
-            <dd className="mt-2 text-sm text-cream">{todayLabel}</dd>
+            <dd className="mt-2 text-sm text-cream">
+              <TodayLabel hours={hours} />
+            </dd>
           </div>
           <div>
             <dt className="text-[11px] tracking-[0.22em] text-mist uppercase">L&apos;adresse</dt>

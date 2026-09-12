@@ -24,7 +24,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "entrees",
     image: {
-      src: "/media/dishes/assiette-du-marche.jpg",
+      src: "/media/dishes/assiette-du-marche.webp",
       alt: "Trois assiettes composées de l'entrée du marché vues de dessus",
     },
     tags: ["de-saison", "a-partager"],
@@ -42,7 +42,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "entrees",
     image: {
-      src: "/media/dishes/salade-des-vignerons.jpg",
+      src: "/media/dishes/salade-des-vignerons.webp",
       alt: "Salade composée servie dans une assiette noire",
     },
     tags: ["vegetarien", "de-saison"],
@@ -60,7 +60,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "entrees",
     image: {
-      src: "/media/dishes/croustillant-de-chevre.jpg",
+      src: "/media/dishes/croustillant-de-chevre.webp",
       alt: "Croustillants de chèvre chaud accompagnés de salade",
     },
     tags: ["vegetarien"],
@@ -78,7 +78,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "entrees",
     image: {
-      src: "/media/dishes/focaccia-du-four.jpg",
+      src: "/media/dishes/focaccia-du-four.webp",
       alt: "Focaccia dorée garnie de fromage fondu et d'oignons rouges, découpée sur une planche",
     },
     tags: ["vegetarien", "a-partager"],
@@ -96,7 +96,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "plats",
     image: {
-      src: "/media/dishes/entrecote-frites.jpg",
+      src: "/media/dishes/entrecote-frites.webp",
       alt: "Entrecôte grillée et frites maison dans une assiette blanche",
     },
     tags: ["signature"],
@@ -114,7 +114,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "plats",
     image: {
-      src: "/media/dishes/cote-de-cochon.jpg",
+      src: "/media/dishes/cote-de-cochon.webp",
       alt: "Côte de cochon rôtie avec pommes et brocolis",
     },
     tags: ["signature", "de-saison"],
@@ -132,7 +132,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "plats",
     image: {
-      src: "/media/dishes/farfalle-pistache.jpg",
+      src: "/media/dishes/farfalle-pistache.webp",
       alt: "Farfalle au pesto vert avec tomates cerises",
     },
     tags: ["vegetarien"],
@@ -150,7 +150,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "plats",
     image: {
-      src: "/media/dishes/burger-lumiere.jpg",
+      src: "/media/dishes/burger-lumiere.webp",
       alt: "Burger maison servi avec un panier de frites",
     },
     tags: [],
@@ -168,7 +168,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "plats",
     image: {
-      src: "/media/dishes/gratin-du-marche.jpg",
+      src: "/media/dishes/gratin-du-marche.webp",
       alt: "Gratin de légumes et accompagnements sur une table en marbre",
     },
     tags: ["vegetarien", "de-saison"],
@@ -186,7 +186,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "plats",
     image: {
-      src: "/media/dishes/travers-laques.jpg",
+      src: "/media/dishes/travers-laques.webp",
       alt: "Travers de bœuf laqués servis sur une planche",
     },
     tags: ["epice"],
@@ -204,7 +204,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "plats",
     image: {
-      src: "/media/dishes/bol-du-midi.jpg",
+      src: "/media/dishes/bol-du-midi.webp",
       alt: "Bol composé de tofu grillé, edamame et légumes frais",
     },
     tags: ["vegan", "sans-gluten"],
@@ -222,7 +222,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "desserts",
     image: {
-      src: "/media/dishes/pain-perdu.jpg",
+      src: "/media/dishes/pain-perdu.webp",
       alt: "Pain perdu doré à la banane et aux myrtilles",
     },
     tags: ["signature"],
@@ -240,7 +240,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "desserts",
     image: {
-      src: "/media/dishes/framboise-pistache.jpg",
+      src: "/media/dishes/framboise-pistache.webp",
       alt: "Part de gâteau framboise-pistache sur une assiette noire",
     },
     tags: ["de-saison"],
@@ -258,7 +258,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "brunch",
     image: {
-      src: "/media/dishes/brunch-complet.jpg",
+      src: "/media/dishes/brunch-complet.webp",
       alt: "Table de brunch garnie de gaufres, œufs et jus d'orange",
     },
     tags: ["signature", "a-partager"],
@@ -275,7 +275,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "brunch",
     image: {
-      src: "/media/dishes/gaufres-dimanche.jpg",
+      src: "/media/dishes/gaufres-dimanche.webp",
       alt: "Gaufres et petits plats de brunch vus de dessus",
     },
     tags: ["vegetarien"],
@@ -293,7 +293,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "brunch",
     image: {
-      src: "/media/dishes/pancakes-maison.jpg",
+      src: "/media/dishes/pancakes-maison.webp",
       alt: "Pile de pancakes nappée de sirop d'érable",
     },
     tags: ["vegetarien"],
@@ -311,7 +311,7 @@ export const dishes: readonly Dish[] = [
     currency: "EUR",
     categoryId: "bar",
     image: {
-      src: "/media/dishes/vieux-carre.jpg",
+      src: "/media/dishes/vieux-carre.webp",
       alt: "Cocktail ambré servi sur un gros glaçon",
     },
     tags: ["signature"],

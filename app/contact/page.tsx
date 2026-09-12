@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
 import { api } from "@/gateway/client";
-import { describeToday, parisWeekday } from "@/lib/schedule";
 import { ArrowIcon, ButtonLink } from "@/packages/ui/button";
-import { cn } from "@/packages/ui/cn";
 import { Container, Eyebrow, Section } from "@/packages/ui/primitives";
 import { Reveal } from "@/packages/ui/reveal";
 import { PageHero } from "@/components/shared/page-hero";
+import { OpeningHours, TodayLabel } from "@/components/shared/opening-hours";
 
 export const metadata: Metadata = {
   title: "Nous trouver",
   description:
     "18 rue des Trois Bornes, Paris 11e. Horaires, accès en métro, accessibilité et réponses aux questions les plus fréquentes.",
 };
-
-/**
- * Le repère « aujourd'hui » dépend de la date : on régénère la page chaque heure
- * plutôt que de figer le jour au moment du build.
- */
-export const revalidate = 3600;
 
 const ACCESS = [
   { label: "Métro", value: "Parmentier (ligne 3), 4 min à pied" },
@@ -33,8 +26,6 @@ export default async function ContactPage() {
     api.content.faq(),
   ]);
 
-  const weekday = parisWeekday();
-
   return (
     <>
       <PageHero
@@ -48,7 +39,7 @@ export default async function ContactPage() {
         }
         intro={`${identity.addressLine}, ${identity.postalCode} ${identity.city}. Entre Parmentier et Oberkampf, la façade bleu nuit avec la verrière allumée.`}
         image={{
-          src: "/media/venue/comptoir.jpg",
+          src: "/media/venue/comptoir.webp",
           alt: "Comptoir du bar avec son ardoise et ses bouteilles",
         }}
       >
@@ -77,41 +68,10 @@ export default async function ContactPage() {
               <div className="h-full rounded-4xl border border-ink-line bg-ink-raised/50 p-8 sm:p-10">
                 <Eyebrow>Horaires</Eyebrow>
                 <p className="mt-6 font-display text-2xl text-cream sm:text-3xl">
-                  Aujourd&apos;hui : <span className="text-gold">{describeToday(hours, weekday)}</span>
+                  Aujourd&apos;hui : <TodayLabel hours={hours} className="text-gold" />
                 </p>
 
-                <ul className="mt-9 divide-y divide-ink-line border-y border-ink-line">
-                  {hours.map((day) => {
-                    const today = day.index === weekday;
-                    return (
-                      <li
-                        key={day.weekday}
-                        className={cn(
-                          "flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-4",
-                          today ? "text-cream" : "text-sand/70",
-                        )}
-                      >
-                        <span className="flex items-center gap-3">
-                          <span
-                            className={cn(
-                              "h-1.5 w-1.5 rounded-full",
-                              today ? "bg-gold" : "bg-transparent",
-                            )}
-                            aria-hidden="true"
-                          />
-                          <span className="font-display text-xl">{day.weekday}</span>
-                        </span>
-                        <span className={cn("text-sm", day.closed && "text-mist")}>
-                          {day.closed
-                            ? "Fermé"
-                            : day.services
-                                .map((service) => `${service.label} ${service.range}`)
-                                .join("   ·   ")}
-                        </span>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <OpeningHours hours={hours} variant="detailed" className="mt-9" />
 
                 <p className="mt-7 text-sm leading-relaxed text-mist">
                   Dernière commande trente minutes avant la fermeture. Le bar reste ouvert une heure

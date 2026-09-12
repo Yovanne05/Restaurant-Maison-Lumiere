@@ -1,7 +1,6 @@
 import "@/services/mesh";
 
 import { dispatch, invoke } from "@/services/kernel";
-import type { ServiceName, ServiceResponse } from "@/services/kernel";
 import type {
   Dish,
   ListDishesInput,
@@ -64,12 +63,3 @@ export const api = {
     summary: () => invoke<ReviewSummary>("review", "getSummary"),
   },
 } as const;
-
-/** Passe-plat brut, utilisé par l'arête HTTP de la gateway. */
-export function forward<TData>(
-  service: ServiceName,
-  operation: string,
-  payload: unknown,
-): Promise<ServiceResponse<TData>> {
-  return dispatch<TData>(service, operation, payload);
-}

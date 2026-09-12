@@ -1,5 +1,4 @@
 import { api } from "@/gateway/client";
-import { describeToday, parisWeekday } from "@/lib/schedule";
 import { Marquee } from "@/packages/ui/primitives";
 import { Hero } from "@/components/home/hero";
 import { SignatureDishes } from "@/components/home/signature-dishes";
@@ -8,12 +7,6 @@ import { Experiences } from "@/components/home/experiences";
 import { Gallery } from "@/components/home/gallery";
 import { Reviews } from "@/components/home/reviews";
 import { BookingCta } from "@/components/home/booking-cta";
-
-/**
- * Le repère « aujourd'hui » dépend de la date : on régénère la page chaque heure
- * plutôt que de figer le jour au moment du build.
- */
-export const revalidate = 3600;
 
 const MARQUEE = [
   "Cuisine ouverte",
@@ -38,18 +31,16 @@ export default async function HomePage() {
       api.review.summary(),
     ]);
 
-  const weekday = parisWeekday();
-
   return (
     <>
-      <Hero identity={identity} summary={summary} todayLabel={describeToday(hours, weekday)} />
+      <Hero identity={identity} summary={summary} hours={hours} />
       <Marquee items={MARQUEE} />
       <SignatureDishes dishes={signatures} updatedAt={overview.updatedAt} />
       <Manifesto values={values} />
       <Experiences experiences={experiences} />
       <Gallery items={gallery} />
       <Reviews reviews={reviews} summary={summary} />
-      <BookingCta identity={identity} hours={hours} todayIndex={weekday} />
+      <BookingCta identity={identity} hours={hours} />
     </>
   );
 }

@@ -44,7 +44,7 @@ export default async function MaisonPage() {
         }
         intro="Camille Rousseau a ouvert Maison Lumière en 2017 dans une ancienne boulangerie du 11e. Le four ne marchait plus. La lumière, si."
         image={{
-          src: "/media/venue/atelier.jpg",
+          src: "/media/venue/atelier.webp",
           alt: "Grande salle lumineuse sous une verrière, avec mobilier en bois",
         }}
       />
@@ -82,7 +82,7 @@ export default async function MaisonPage() {
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <Reveal className="relative aspect-3/4 overflow-hidden rounded-5xl lg:sticky lg:top-28">
               <Image
-                src="/media/venue/brasserie.jpg"
+                src="/media/venue/brasserie.webp"
                 alt="Cuisine ouverte et comptoir de dressage vus depuis la salle"
                 fill
                 sizes="(min-width: 1024px) 40vw, 90vw"

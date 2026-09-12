@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Maison Lumière — Bistronomie de quartier, Paris 11e",
     description:
       "Carte courte qui change chaque semaine, cuisine ouverte, 42 couverts. Réservation en ligne.",
-    images: [{ url: "/media/venue/salle.jpg", width: 1200, height: 630, alt: "La salle de Maison Lumière" }],
+    images: [{ url: "/media/venue/salle.webp", width: 1200, height: 630, alt: "La salle de Maison Lumière" }],
   },
 };
 

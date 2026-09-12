@@ -26,7 +26,7 @@ export default async function ReserverPage() {
         }
         intro="Choisissez le jour et l'heure : la disponibilité affichée est celle du plan de salle, mise à jour en direct."
         image={{
-          src: "/media/venue/service.jpg",
+          src: "/media/venue/service.webp",
           alt: "Convives attablés en train de partager un repas",
         }}
       />
